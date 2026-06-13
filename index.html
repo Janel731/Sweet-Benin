@@ -1,0 +1,1721 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Bénin | Coffrets de Toffi Premium</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+      :root {
+        --gold: #d9a441;
+        --gold-light: #f2c66d;
+        --brown: #5b3427;
+        --cream: #fff8f0;
+        --red: #b83a3a;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+        background: white;
+      }
+
+      .title-font {
+        font-family: "Playfair Display", serif;
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+          url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .glass {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .gold-gradient {
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      }
+
+      .header-scrolled {
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .header-scrolled .nav-link {
+        color: #333;
+      }
+
+      .header-scrolled .logo-text {
+        color: var(--brown);
+      }
+
+      .flavor-card {
+        background: white;
+        border-radius: 24px;
+        padding: 32px 24px;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 1px solid #f3f4f6;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+
+      .flavor-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        border-color: var(--gold-light);
+      }
+
+      .flavor-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .flavor-icon svg {
+        width: 32px;
+        height: 32px;
+        color: var(--gold);
+      }
+
+      .flavor-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--brown);
+      }
+
+      .flavor-card p {
+        color: #6b7280;
+        margin-top: 8px;
+      }
+
+      .step-card {
+        position: relative;
+        background: white;
+        border-radius: 24px;
+        padding: 40px 24px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.4s ease;
+      }
+
+      .step-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .step-number {
+        position: absolute;
+        top: -15px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gold);
+        color: white;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .step-icon {
+        width: 80px;
+        height: 80px;
+        margin: auto;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background: rgba(217, 164, 65, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .step-icon svg {
+        width: 36px;
+        height: 36px;
+        color: var(--gold);
+      }
+
+      .step-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--brown);
+      }
+
+      .step-card p {
+        margin-top: 10px;
+        color: #6b7280;
+      }
+
+      /* Galerie Masonry */
+      /* .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 20px;
+        gap: 20px;
+      } */
+
+      /* .masonry-item {
+      
+        
+        position: relative;
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+        
+        
+      } */
+
+      .masonry-grid {
+        width: 100%;
+      }
+
+      .masonry-item {
+        width: calc(33.333% - 14px);
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .masonry-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px -12px rgba(91, 52, 39, 0.25);
+      }
+
+      .masonry-item img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .short img {
+        height: 250px;
+      }
+
+      .medium img {
+        height: 400px;
+      }
+
+      .tall img {
+        height: 600px;
+      }
+
+      .masonry-item .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        color: white;
+      }
+
+      .masonry-item:hover .overlay {
+        opacity: 1;
+      }
+
+      .masonry-item .overlay h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .masonry-item .overlay p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Pricing table */
+      .pricing-table {
+        border-collapse: collapse;
+        width: 100%;
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .pricing-table th {
+        background: var(--cream);
+        padding: 20px;
+        text-align: center;
+        font-weight: 700;
+        color: var(--brown);
+        font-size: 1.1rem;
+      }
+
+      .pricing-table td {
+        padding: 16px 20px;
+        text-align: center;
+        border-bottom: 1px solid #f3f4f6;
+      }
+
+      .pricing-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .pricing-table .highlight {
+        background: #fdf8f0;
+        border: 2px solid var(--gold-light);
+      }
+
+      .pricing-table .highlight th {
+        background: var(--gold-light);
+        color: white;
+      }
+
+      .pricing-table .check {
+        color: var(--gold);
+      }
+
+      .pricing-table .cross {
+        color: #d1d5db;
+      }
+
+      /* Faq accordéon amélioré */
+      .faq-item {
+        background: white;
+        border-radius: 20px;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        border: 1px solid #f3f4f6;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .faq-item.open {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .faq-header {
+        padding: 20px 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        color: var(--brown);
+        font-size: 1.05rem;
+        transition: background 0.3s ease;
+        user-select: none;
+      }
+
+      .faq-header:hover {
+        background: #faf6f0;
+      }
+
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          opacity 0.4s ease;
+        opacity: 0;
+        padding: 0 24px;
+      }
+
+      .faq-item.open .faq-body {
+        max-height: 300px;
+        opacity: 1;
+        padding-bottom: 24px;
+      }
+
+      .faq-body p {
+        color: #6b7280;
+        border-top: 1px solid #f3f4f6;
+        padding-top: 16px;
+      }
+
+      /* Bouton retour haut */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--gold);
+        color: white;
+        border: none;
+        box-shadow: 0 8px 24px rgba(217, 164, 65, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        transform: translateY(20px);
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(217, 164, 65, 0.5);
+      }
+
+      /* Sticky CTA WhatsApp mobile */
+      .whatsapp-sticky {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+        z-index: 999;
+        background: #25d366;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        text-decoration: none;
+      }
+
+      .whatsapp-sticky.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .whatsapp-sticky:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+      }
+
+      /* --- Uniquement pour le Carousel 3D --- */
+      .carousel-container {
+        perspective: 1200px;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .carousel-3d {
+        width: 200px;
+        height: 280px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .carousel-card {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        backface-visibility: hidden;
+        border-radius: 24px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(217, 164, 65, 0.2);
+      }
+
+      /* Effet de reflet (Reflect/Gloss) */
+      .carousel-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .card-image {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+        text-align: center;
+        background: white;
+        flex-grow: 1;
+      }
+
+      @media (max-width: 640px) {
+        .whatsapp-sticky {
+          bottom: 20px;
+          left: 20px;
+          padding: 10px 16px;
+          font-size: 0.8rem;
+        }
+        .whatsapp-sticky span {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================================
+  HEADER
+  ============================================================ -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="h-20 flex items-center justify-between">
+          <a href="#" class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center"
+            >
+              <i data-lucide="crown" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="logo-text text-white text-2xl font-bold"
+              >Sweet Bénin</span
+            >
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              href="#saveurs"
+              class="nav-link text-white font-medium hover:text-amber-400 transition"
+              >Saveurs</a
+            >
+            <a
+              href="#realisations"
+              class="nav-link text-white font-medium hover:text-amber-400 transition"
+              >Réalisations</a
+            >
+            <a
+              href="#pricing"
+              class="nav-link text-white font-medium hover:text-amber-400 transition"
+              >Formules</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-white font-medium hover:text-amber-400 transition"
+              >Contact</a
+            >
+          </nav>
+          <a
+            href="https://wa.me/22961123456"
+            target="_blank"
+            class="hidden sm:flex items-center gap-2 gold-gradient text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <i data-lucide="message-circle"></i> Commander
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+  HERO (cinématique avec typing effect)
+  ============================================================ -->
+    <section
+      id="hero"
+      class="hero-bg min-h-screen flex items-center relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+        <div class="max-w-4xl">
+          <div
+            class="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-white mb-8"
+          >
+            <i data-lucide="sparkles"></i>
+            <span>11 saveurs artisanales uniques</span>
+          </div>
+
+          <h1
+            class="hero-title title-font text-white text-5xl md:text-7xl font-black leading-tight"
+          >
+            Des coffrets de toffi premium
+            <span class="block text-amber-400">
+              pour des
+              <span
+                id="typed-text"
+                class="border-r-2 border-amber-400 pr-1"
+              ></span>
+            </span>
+          </h1>
+
+          <p
+            class="hero-text text-white/90 text-xl md:text-2xl mt-8 max-w-2xl leading-relaxed"
+          >
+            Mariages, communions, anniversaires et événements d'entreprise.
+            Offrez à vos invités une expérience gourmande élégante avec nos
+            créations artisanales.
+          </p>
+
+          <div class="hero-buttons flex flex-wrap gap-4 mt-10">
+            <a
+              href="https://wa.me/22961123456"
+              target="_blank"
+              class="gold-gradient text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all flex items-center gap-2"
+            >
+              <i data-lucide="message-circle"></i> Commander sur WhatsApp
+            </a>
+            <a
+              href="#realisations"
+              class="glass text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all"
+            >
+              Voir nos créations
+            </a>
+          </div>
+
+          <div class="hero-proof flex flex-wrap gap-10 mt-16">
+            <div>
+              <h3 class="text-white text-4xl font-bold">500+</h3>
+              <p class="text-white/80">Coffrets livrés</p>
+            </div>
+            <div>
+              <h3 class="text-white text-4xl font-bold">120+</h3>
+              <p class="text-white/80">Événements accompagnés</p>
+            </div>
+            <div>
+              <h3 class="text-white text-4xl font-bold">4.9/5</h3>
+              <p class="text-white/80">Satisfaction client</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  STATISTIQUES (avec effet counter)
+  ============================================================ -->
+    <section id="stats" class="py-24 bg-[var(--cream)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="text-amber-600 font-semibold uppercase tracking-widest"
+            >Sweet Bénin en chiffres</span
+          >
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+            La confiance de nos clients
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div
+            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <h3
+              class="counter text-5xl font-extrabold text-amber-500"
+              data-target="500"
+            >
+              0
+            </h3>
+            <p class="mt-4 text-gray-600 font-medium">Coffrets livrés</p>
+          </div>
+          <div
+            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <h3
+              class="counter text-5xl font-extrabold text-amber-500"
+              data-target="120"
+            >
+              0
+            </h3>
+            <p class="mt-4 text-gray-600 font-medium">Événements accompagnés</p>
+          </div>
+          <div
+            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <h3
+              class="counter text-5xl font-extrabold text-amber-500"
+              data-target="11"
+            >
+              0
+            </h3>
+            <p class="mt-4 text-gray-600 font-medium">Saveurs uniques</p>
+          </div>
+          <div
+            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <h3
+              class="counter text-5xl font-extrabold text-amber-500"
+              data-target="99"
+            >
+              0
+            </h3>
+            <p class="mt-4 text-gray-600 font-medium">Clients satisfaits</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SAVEURS (version premium - photos réelles) -->
+    <section id="saveurs" class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="text-amber-600 font-semibold uppercase tracking-widest text-sm"
+            >Expérience Sensorielle</span
+          >
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+            Nos 11 Saveurs de Toffi
+          </h2>
+        </div>
+
+        <div class="carousel-container">
+          <div class="carousel-3d" id="flavorCarousel"></div>
+        </div>
+
+        <div class="flex justify-center items-center gap-8 mt-12">
+          <button
+            onclick="prevSlide()"
+            class="p-4 rounded-full border border-amber-200 text-amber-600 hover:bg-amber-600 hover:text-white transition-all shadow-md"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button
+            onclick="nextSlide()"
+            class="p-4 rounded-full border border-amber-200 text-amber-600 hover:bg-amber-600 hover:text-white transition-all shadow-md"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="text-center mt-14">
+          <a
+            href="https://wa.me/22961123456"
+            target="_blank"
+            class="gold-gradient inline-flex items-center gap-3 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all"
+          >
+            <i data-lucide="message-circle"></i> Commander un assortiment
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  PROCESS (Comment ça marche)
+  ============================================================ -->
+    <section id="process" class="py-24 bg-[var(--cream)] overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span class="text-amber-600 font-semibold uppercase tracking-widest"
+            >Comment ça marche</span
+          >
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+            Commandez en quelques étapes
+          </h2>
+          <p class="text-gray-600 text-lg mt-6">
+            Nous vous accompagnons de la sélection des saveurs jusqu'à la
+            livraison.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 relative">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-icon"><i data-lucide="candy"></i></div>
+            <h3>Choisissez vos saveurs</h3>
+            <p>Sélectionnez vos saveurs préférées ou créez un assortiment.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-icon"><i data-lucide="palette"></i></div>
+            <h3>Personnalisez</h3>
+            <p>
+              Choisissez le style de votre coffret, les couleurs et le message.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-icon"><i data-lucide="package"></i></div>
+            <h3>Préparation</h3>
+            <p>Notre équipe prépare votre commande avec le plus grand soin.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-icon"><i data-lucide="truck"></i></div>
+            <h3>Livraison</h3>
+            <p>Recevez votre commande où que vous soyez.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  RÉALISATIONS (grille Masonry 6 images)
+  ============================================================ -->
+    <section id="realisations" class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-amber-600 font-semibold uppercase tracking-widest"
+            >Nos Créations</span
+          >
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+            L'élégance à chaque événement
+          </h2>
+          <p class="text-gray-600 text-lg mt-6">
+            Découvrez comment nos coffrets de toffi subliment les moments les
+            plus précieux.
+          </p>
+        </div>
+        <div class="masonry-grid mb-16">
+          <div class="masonry-item short">
+            <img
+              src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop"
+              alt="Mariage"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Mariage Royal</h3>
+              <p>Coffrets Premium - 200 invités</p>
+            </div>
+          </div>
+          <div class="masonry-item medium">
+            <img
+              src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=400&auto=format&fit=crop"
+              alt="Cadeau d'entreprise"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Cadeaux d'Entreprise</h3>
+              <p>Personnalisation aux couleurs de la marque</p>
+            </div>
+          </div>
+          <div class="masonry-item tall">
+            <img
+              src="https://images.unsplash.com/photo-1576682248557-047b9bf154e8?q=80&w=400&auto=format&fit=crop"
+              alt="Baptême"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Baptême & Communion</h3>
+              <p>Pochons délicats et rubans dorés</p>
+            </div>
+          </div>
+          <div class="masonry-item short">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=400&auto=format&fit=crop"
+              alt="Anniversaire"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Anniversaire</h3>
+              <p>Saveurs colorées et festive</p>
+            </div>
+          </div>
+          <div class="masonry-item medium">
+            <img
+              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=400&auto=format&fit=crop"
+              alt="Séminaire"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Événements Corporate</h3>
+              <p>Élégance et professionnalisme</p>
+            </div>
+          </div>
+          <div class="masonry-item short">
+            <img
+              src="https://images.unsplash.com/photo-1528605248644-14dd604bb231?q=80&w=400&auto=format&fit=crop"
+              alt="Baby shower"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Baby Shower</h3>
+              <p>Douceur et tendresse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  FORMULES (Tableau comparatif au lieu de cartes)
+  ============================================================ -->
+    <section id="pricing" class="py-24 bg-[var(--cream)] overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-amber-600 font-semibold uppercase tracking-widest"
+            >Nos Formules</span
+          >
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+            Des offres adaptées à vos besoins
+          </h2>
+          
+        </div>
+        <div class="overflow-x-auto">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th
+                  class="bg-transparent text-left"
+                  style="background: transparent; color: var(--brown)"
+                >
+                  Fonctionnalités
+                </th>
+                <th>Découverte</th>
+                <th class="highlight">Prestige</th>
+                <th>Corporate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-left font-medium text-gray-700">
+                  Quantité maximale
+                </td>
+                <td>Jusqu'à 50 coffrets</td>
+                <td class="highlight">100 à 300 coffrets</td>
+                <td>Illimité</td>
+              </tr>
+              <tr>
+                <td class="text-left font-medium text-gray-700">
+                  Saveurs au choix
+                </td>
+                <td>2 saveurs</td>
+                <td class="highlight">5 saveurs</td>
+                <td>Toutes les saveurs</td>
+              </tr>
+              <tr>
+                <td class="text-left font-medium text-gray-700">
+                  Emballage personnalisable
+                </td>
+                <td>Standard</td>
+                <td class="highlight">Avancé (ruban, mot personnalisé)</td>
+                <td>Premium (logo entreprise)</td>
+              </tr>
+              <tr>
+                <td class="text-left font-medium text-gray-700">
+                  Livraison prioritaire
+                </td>
+                <td><i data-lucide="x" class="cross"></i></td>
+                <td class="highlight">
+                  <i data-lucide="check" class="check"></i>
+                </td>
+                <td><i data-lucide="check" class="check"></i></td>
+              </tr>
+              <tr>
+                <td class="text-left font-medium text-gray-700">Tarif</td>
+                <td>Sur devis</td>
+                <td class="highlight font-bold text-[var(--brown)]">
+                  Sur devis
+                </td>
+                <td>Sur mesure</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <a
+                    href="#contact"
+                    class="text-amber-600 font-semibold hover:underline"
+                    >Demander devis</a
+                  >
+                </td>
+                <td class="highlight">
+                  <a
+                    href="#contact"
+                    class="gold-gradient text-white px-4 py-2 rounded-full font-semibold inline-block hover:shadow-lg transition-shadow"
+                    >Commander</a
+                  >
+                </td>
+                <td>
+                  <a
+                    href="#contact"
+                    class="text-amber-600 font-semibold hover:underline"
+                    >Nous contacter</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-4 text-center text-sm text-gray-500">
+            <span
+              class="gold-gradient text-white px-3 py-1 rounded-full text-xs font-bold inline-block mr-2"
+              >Recommandé</span
+            >
+            Pour les mariages et grands événements
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  AVIS CLIENTS (Carrousel automatique)
+  ============================================================ -->
+    <section class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="title-font text-5xl text-[var(--brown)]">Ils ont adoré</h2>
+        </div>
+        <div class="relative overflow-hidden">
+          <div
+            id="testimonial-track"
+            class="flex transition-transform duration-700 ease-in-out"
+          >
+            <div class="testimonial-slide flex-[0_0_100%] px-4">
+              <div
+                class="review-card bg-[var(--cream)] p-8 rounded-3xl max-w-2xl mx-auto"
+              >
+                <div class="flex gap-1 mb-4 text-amber-500">
+                  <i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i>
+                </div>
+                <p class="text-gray-600 italic mb-6">
+                  "Les coffrets pour notre mariage étaient magnifiques. Les
+                  invités ont été surpris par la finesse des toffis au gingembre
+                  et coco. Un service irréprochable !"
+                </p>
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Marie+D.&background=d9a441&color=fff"
+                      alt="Avatar"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-[var(--brown)]">Marie D.</h4>
+                    <span class="text-sm text-gray-500">Mariée</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide flex-[0_0_100%] px-4">
+              <div
+                class="review-card bg-[var(--cream)] p-8 rounded-3xl max-w-2xl mx-auto"
+              >
+                <div class="flex gap-1 mb-4 text-amber-500">
+                  <i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i>
+                </div>
+                <p class="text-gray-600 italic mb-6">
+                  "Nous avons commandé 500 coffrets pour notre gala de fin
+                  d'année. L'équipe a su personnaliser chaque boîte avec notre
+                  logo. Excellent retour de nos collaborateurs."
+                </p>
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Paul+K.&background=5b3427&color=fff"
+                      alt="Avatar"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-[var(--brown)]">Paul K.</h4>
+                    <span class="text-sm text-gray-500">Directeur RH</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide flex-[0_0_100%] px-4">
+              <div
+                class="review-card bg-[var(--cream)] p-8 rounded-3xl max-w-2xl mx-auto"
+              >
+                <div class="flex gap-1 mb-4 text-amber-500">
+                  <i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i
+                  ><i data-lucide="star" class="fill-current w-5 h-5"></i>
+                </div>
+                <p class="text-gray-600 italic mb-6">
+                  "Le toffi à la noix de cajou est une véritable tuerie !
+                  Présentation soignée, livraison dans les temps à Cotonou. Je
+                  recommanderai sans hésiter pour l'anniversaire de ma fille."
+                </p>
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Amina+T.&background=f2c66d&color=fff"
+                      alt="Avatar"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-[var(--brown)]">Amina T.</h4>
+                    <span class="text-sm text-gray-500">Mère de famille</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Indicateurs -->
+          <div class="flex justify-center gap-2 mt-6">
+            <button
+              class="testimonial-dot w-2.5 h-2.5 rounded-full bg-amber-400 transition-all"
+              data-index="0"
+            ></button>
+            <button
+              class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all"
+              data-index="1"
+            ></button>
+            <button
+              class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all"
+              data-index="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  FAQ (Accordéon amélioré avec animation GSAP)
+  ============================================================ -->
+    <section id="faq" class="py-24 bg-[var(--cream)]">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="title-font text-5xl text-[var(--brown)]">
+            Questions Fréquentes
+          </h2>
+        </div>
+        <div class="space-y-4">
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>Combien de temps à l'avance dois-je commander ?</span>
+              <i
+                data-lucide="chevron-down"
+                class="text-[var(--gold)] transition-transform duration-300"
+              ></i>
+            </div>
+            <div class="faq-body">
+              <p>
+                Pour les mariages et grands événements (>100 coffrets), nous
+                recommandons de passer commande au moins 3 semaines à l'avance.
+                Pour les petites commandes, 1 semaine suffit généralement.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>Livrez-vous partout au Bénin ?</span>
+              <i
+                data-lucide="chevron-down"
+                class="text-[var(--gold)] transition-transform duration-300"
+              ></i>
+            </div>
+            <div class="faq-body">
+              <p>
+                Oui ! Nous sommes basés à Cotonou mais nous organisons des
+                expéditions sécurisées vers toutes les grandes villes du Bénin
+                via nos partenaires logistiques.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header">
+              <span
+                >Est-il possible de goûter avant de commander une grande
+                quantité ?</span
+              >
+              <i
+                data-lucide="chevron-down"
+                class="text-[var(--gold)] transition-transform duration-300"
+              ></i>
+            </div>
+            <div class="faq-body">
+              <p>
+                Absolument. Nous proposons un "Coffret Dégustation" contenant
+                nos 11 saveurs à un tarif préférentiel pour vous aider à faire
+                votre choix.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+  CONTACT & FOOTER
+  ============================================================ -->
+    <section id="contact" class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span class="text-amber-600 font-semibold uppercase tracking-widest"
+              >Contactez-nous</span
+            >
+            <h2 class="title-font text-5xl text-[var(--brown)] mt-4 mb-6">
+              Prêt à sublimer votre événement ?
+            </h2>
+            <p class="text-gray-600 mb-10">
+              Notre équipe est à votre disposition pour vous conseiller sur les
+              meilleures associations de saveurs et le packaging idéal pour vos
+              invités.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-[var(--gold)]"
+                >
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-[var(--brown)]">Adresse</h4>
+                  <p class="text-gray-600">Cotonou, Littoral, Bénin</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-[var(--gold)]"
+                >
+                  <i data-lucide="phone"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-[var(--brown)]">
+                    Téléphone / WhatsApp
+                  </h4>
+                  <p class="text-gray-600">+229 61 12 34 56</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-[var(--gold)]"
+                >
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-[var(--brown)]">Email</h4>
+                  <p class="text-gray-600">contact@sweetbenin.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[var(--cream)] p-10 rounded-3xl shadow-sm border border-amber-100"
+          >
+            <h3 class="text-2xl font-bold text-[var(--brown)] mb-6">
+              Demander un devis rapide
+            </h3>
+            <form class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Prénom"
+                  class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-[var(--gold)] outline-none"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Nom"
+                  class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-[var(--gold)] outline-none"
+                  required
+                />
+              </div>
+              <input
+                type="tel"
+                placeholder="Numéro WhatsApp"
+                class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-[var(--gold)] outline-none"
+                required
+              />
+              <select
+                class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-[var(--gold)] outline-none text-gray-500"
+              >
+                <option value="">Type d'événement</option>
+                <option value="mariage">Mariage</option>
+                <option value="entreprise">Événement d'entreprise</option>
+                <option value="anniversaire">Anniversaire / Baptême</option>
+                <option value="autre">Autre</option>
+              </select>
+              <textarea
+                placeholder="Décrivez votre besoin (Quantité estimée, date, etc.)"
+                rows="4"
+                class="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-[var(--gold)] outline-none resize-none"
+                required
+              ></textarea>
+              <button
+                type="button"
+                class="w-full gold-gradient text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow flex justify-center items-center gap-2"
+              >
+                Envoyer ma demande <i data-lucide="send" class="w-5 h-5"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer
+        class="bg-[var(--brown)] py-16 rounded-t-[3rem] mt-12 relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-[var(--gold)] opacity-10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"
+        ></div>
+        <div
+          class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center"
+        >
+          <div
+            class="w-16 h-16 rounded-full gold-gradient flex items-center justify-center mb-6"
+          >
+            <i data-lucide="crown" class="w-8 h-8 text-white"></i>
+          </div>
+          <h2 class="title-font text-4xl text-white mb-8">
+            Faites de votre événement un moment inoubliable
+          </h2>
+          <a
+            href="https://wa.me/22961123456"
+            target="_blank"
+            class="gold-gradient text-white px-10 py-4 rounded-full font-bold shadow-xl flex items-center gap-3 hover:scale-105 transition-transform"
+          >
+            <i data-lucide="message-circle" class="w-6 h-6"></i> Discutons sur
+            WhatsApp
+          </a>
+          <div
+            class="w-full border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm"
+          >
+            <p>&copy; 2026 Sweet Bénin. Tous droits réservés.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+              <a href="#" class="hover:text-[var(--gold)] transition-colors"
+                >Mentions légales</a
+              >
+              <a href="#" class="hover:text-[var(--gold)] transition-colors"
+                >CGV</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ============================================================
+  BOUTON RETOUR HAUT
+  ============================================================ -->
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- ============================================================
+  STICKY WHATSAPP MOBILE
+  ============================================================ -->
+    <a
+      href="https://wa.me/22961123456"
+      target="_blank"
+      id="whatsappSticky"
+      class="whatsapp-sticky"
+    >
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span>Commander sur WhatsApp</span>
+    </a>
+
+    <!-- ============================================================
+  SCRIPTS
+  ============================================================ -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+      lucide.createIcons();
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // -------- HEADER SCROLL --------
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) header.classList.add("header-scrolled");
+        else header.classList.remove("header-scrolled");
+      });
+
+      // -------- HERO ANIMATIONS --------
+      gsap.from(".hero-badge", { y: 30, opacity: 0, duration: 1 });
+      gsap.from(".hero-title", {
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.2,
+      });
+      gsap.from(".hero-text", { y: 40, opacity: 0, duration: 1, delay: 0.5 });
+
+      gsap.from(".hero-buttons", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        delay: 0.8,
+      });
+      gsap.from(".hero-proof > div", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        delay: 1,
+      });
+
+      // -------- TYPING EFFECT ON HERO --------
+      const typedWords = [
+        "mariages",
+        "communions",
+        "anniversaires",
+        "événements d'entreprise",
+        "moments précieux",
+      ];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typedElement = document.getElementById("typed-text");
+
+      function typeEffect() {
+        const currentWord = typedWords[wordIndex];
+        if (!isDeleting) {
+          typedElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === currentWord.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 2000);
+            return;
+          }
+        } else {
+          typedElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % typedWords.length;
+            setTimeout(typeEffect, 500);
+            return;
+          }
+        }
+        setTimeout(typeEffect, isDeleting ? 80 : 120);
+      }
+      setTimeout(typeEffect, 1500);
+
+      // -------- STATS COUNTER --------
+      document.querySelectorAll(".counter").forEach((counter) => {
+        ScrollTrigger.create({
+          trigger: counter,
+          start: "top 80%",
+          once: true,
+          onEnter: () => {
+            let target = +counter.dataset.target;
+            let obj = { value: 0 };
+            gsap.to(obj, {
+              value: target,
+              duration: 2,
+              ease: "power2.out",
+              onUpdate: () => {
+                counter.textContent = Math.floor(obj.value);
+              },
+            });
+          },
+        });
+      });
+
+      // -------- FLAVOR CARDS --------
+      document.querySelectorAll(".flavor-card").forEach((card, index) => {
+        gsap.from(card, {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          delay: index * 0.08,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      // -------- STEP CARDS --------
+      document.querySelectorAll(".step-card").forEach((card, index) => {
+        gsap.from(card, {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          delay: index * 0.1,
+          ease: "power3.out",
+          scrollTrigger: { trigger: card, start: "top 85%", once: true },
+        });
+      });
+
+      // -------- MASONRY ITEMS --------
+      gsap.from(".masonry-item", {
+        scrollTrigger: { trigger: "#realisations", start: "top 75%" },
+        y: 80,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+
+      // -------- PRICING TABLE --------
+      gsap.from(".pricing-table", {
+        scrollTrigger: { trigger: "#pricing", start: "top 75%" },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "back.out(1.2)",
+      });
+
+      // -------- TESTIMONIAL CAROUSEL --------
+      const track = document.getElementById("testimonial-track");
+      const dots = document.querySelectorAll(".testimonial-dot");
+      let currentTestimonial = 0;
+      const totalTestimonials = 3;
+
+      function goToTestimonial(index) {
+        currentTestimonial = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("bg-amber-400", i === index);
+          dot.classList.toggle("bg-gray-300", i !== index);
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => goToTestimonial(index));
+      });
+
+      let testimonialInterval = setInterval(() => {
+        goToTestimonial((currentTestimonial + 1) % totalTestimonials);
+      }, 5000);
+
+      // -------- FAQ ACCORDÉON (GSAP animé) --------
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const header = item.querySelector(".faq-header");
+        const body = item.querySelector(".faq-body");
+        const icon = header.querySelector("i");
+
+        header.addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+          // Fermer les autres
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((other) => other.classList.remove("open"));
+
+          if (!isOpen) {
+            item.classList.add("open");
+            gsap.fromTo(
+              body,
+              { maxHeight: 0, opacity: 0 },
+              {
+                maxHeight: body.scrollHeight + 20,
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.out",
+              },
+            );
+            gsap.to(icon, { rotation: 180, duration: 0.4 });
+          } else {
+            gsap.to(body, {
+              maxHeight: 0,
+              opacity: 0,
+              duration: 0.4,
+              ease: "power2.in",
+            });
+            gsap.to(icon, { rotation: 0, duration: 0.4 });
+          }
+        });
+      });
+
+      // -------- BACK TO TOP BUTTON --------
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // -------- STICKY WHATSAPP --------
+      const stickyWhatsApp = document.getElementById("whatsappSticky");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 600) {
+          stickyWhatsApp.classList.add("visible");
+        } else {
+          stickyWhatsApp.classList.remove("visible");
+        }
+      });
+
+      // -------- FORM SUBMIT (simulation) --------
+      document
+        .querySelector("#contact form button")
+        .addEventListener("click", function () {
+          const form = this.closest("form");
+          const inputs = form.querySelectorAll("input, textarea, select");
+          let allFilled = true;
+          inputs.forEach((input) => {
+            if (!input.value.trim()) allFilled = false;
+          });
+          if (allFilled) {
+            alert(
+              "✅ Demande envoyée ! Nous vous répondrons sous 24h via WhatsApp.",
+            );
+            form.reset();
+          } else {
+            alert("⚠️ Veuillez remplir tous les champs du formulaire.");
+          }
+        });
+
+      // Refresh ScrollTrigger on resize
+      window.addEventListener("resize", () => ScrollTrigger.refresh());
+
+      console.log("Sweet Bénin – Version améliorée avec animations premium !");
+
+      const flavors = [
+        {
+          name: "Menthe",
+          img: "./src/assets/menthe.webp",
+          desc: "Fraîcheur vivifiante",
+        },
+        {
+          name: "Citronnelle",
+          img: "./src/assets/citronelle.webp",
+          desc: "Parfum délicat",
+        },
+        {
+          name: "Ananas",
+          img: "./src/assets/ananas.webp",
+          desc: "Douceur tropicale",
+        },
+        {
+          name: "Gingembre",
+          img: "./src/assets/gingembre.webp",
+          desc: "Intensité",
+        },
+        {
+          name: "Coco",
+          img: "./src/assets/coco.webp",
+          desc: "Onctuosité",
+        },
+        {
+          name: "Vanille",
+          img: "./src/assets/vanille.webp",
+          desc: "Raffinement",
+        },
+        {
+          name: "Caramel",
+          img: "./src/assets/caramel.webp",
+          desc: "Gourmandise",
+        },
+        {
+          name: "Fruits séchés",
+          img: "./src/assets/fruits_sechet.webp",
+          desc: "Éclat fruité",
+        },
+        {
+          name: "Nougat",
+          img: "./src/assets/nougat.webp",
+          desc: "Croustillant",
+        },
+        {
+          name: "Fondants",
+          img: "./src/assets/fondant.webp",
+          desc: "Intensité pure",
+        },
+        {
+          name: "Cannelle",
+          img: "./src/assets/canelle.webp",
+          desc: "Chaleur épicée",
+        },
+         {
+          name: "Epices",
+          img: "./src/assets/epice.webp",
+          desc: "Aux épices",
+        },
+      ];
+
+      const carousel = document.getElementById("flavorCarousel");
+      const totalFlavors = flavors.length;
+      const angle = 360 / totalFlavors;
+      let currentRotation = 0;
+
+      // Génération des cartes
+      flavors.forEach((f, i) => {
+        const card = document.createElement("div");
+        card.className = "carousel-card";
+        // Calcul de la position 3D (Z = 500px pour l'éloignement du centre)
+        card.style.transform = `rotateY(${i * angle}deg) translateZ(500px)`;
+
+        card.innerHTML = `
+    <img src="${f.img}" class="card-image" alt="${f.name}">
+    <div class="card-content">
+      <h3 class="title-font text-xl font-bold text-[#5b3427]">${f.name}</h3>
+      <p class="text-sm text-gray-500">${f.desc}</p>
+    </div>
+  `;
+        carousel.appendChild(card);
+      });
+
+      function updateCarousel() {
+        carousel.style.transform = `rotateY(${currentRotation}deg)`;
+      }
+
+      function nextSlide() {
+        currentRotation -= angle;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentRotation += angle;
+        updateCarousel();
+      }
+
+      // Auto-rotation optionnelle
+      let autoRotation = setInterval(nextSlide, 4000);
+      carousel.addEventListener("mouseenter", () =>
+        clearInterval(autoRotation),
+      );
+      carousel.addEventListener(
+        "mouseleave",
+        () => (autoRotation = setInterval(nextSlide, 4000)),
+      );
+
+      const grid = document.querySelector(".masonry-grid");
+
+      window.addEventListener("load", () => {
+        new Masonry(".masonry-grid", {
+          itemSelector: ".masonry-item",
+          gutter: 20,
+          percentPosition: true,
+        });
+      });
+    </script>
+  </body>
+</html>

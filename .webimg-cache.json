@@ -1,0 +1,74 @@
+{
+  "src\\assets\\caramel.jpg": {
+    "hash": "44aecb5ff78c622396f098f12e98a9a15ca5250e",
+    "outputs": [
+      "src\\assets\\caramel@1x.webp",
+      "src\\assets\\caramel@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281455855
+  },
+  "src\\assets\\coconut.jpg": {
+    "hash": "62381f66f85c51411faf76f110ea9fb0ce0f1519",
+    "outputs": [
+      "src\\assets\\coconut@1x.webp",
+      "src\\assets\\coconut@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281455898
+  },
+  "src\\assets\\gingembre.jpg": {
+    "hash": "df0747c2ae670c84da6db40dcb0cf52365757eb3",
+    "outputs": [
+      "src\\assets\\gingembre@1x.webp",
+      "src\\assets\\gingembre@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281455947
+  },
+  "src\\assets\\cannelle.jpg": {
+    "hash": "d29b59793c4fa0aaf64cd5002aac5e84eea9d926",
+    "outputs": [
+      "src\\assets\\cannelle@1x.webp",
+      "src\\assets\\cannelle@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281455984
+  },
+  "src\\assets\\Mint.jpg": {
+    "hash": "36a8fe7c6877a39da5eabc8e169d34bec1686fca",
+    "outputs": [
+      "src\\assets\\Mint@1x.webp",
+      "src\\assets\\Mint@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281456076
+  },
+  "src\\assets\\ananas.jpg": {
+    "hash": "5524f547f14d477110ead040b124d4a5cbc5747b",
+    "outputs": [
+      "src\\assets\\ananas@1x.webp",
+      "src\\assets\\ananas@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281456108
+  },
+  "src\\assets\\vanille.jpg": {
+    "hash": "f9e845179cc2c746f78c29ee9053785ba9fd46e8",
+    "outputs": [
+      "src\\assets\\vanille@1x.webp",
+      "src\\assets\\vanille@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281456206
+  },
+  "src\\assets\\communion.jpeg": {
+    "hash": "611cc79c47e733ebbc9172ab4f3cd52a1a940177",
+    "outputs": [
+      "src\\assets\\communion@1x.webp",
+      "src\\assets\\communion@2x.webp"
+    ],
+    "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
+    "mtime": 1781281456209
+  }
+}

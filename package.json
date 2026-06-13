@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@eltkof7/webimg-cli": "^2.0.0"
+  },
+  "scripts": {
+    "img:scan": "webimg scan -i ./src/assets -r",
+    "img:build": "webimg run -i ./src/assets -o ./public/img -f webp,avif -q 80 -r",
+    "img:watch": "webimg run -i ./src/assets -o ./public/img -f webp --watch -r"
+  }
+}
