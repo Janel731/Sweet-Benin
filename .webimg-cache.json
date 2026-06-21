@@ -70,5 +70,13 @@
     ],
     "optionsHash": "9beff4e169840425a2f1b6b5c65069f17fbabc95",
     "mtime": 1781281456209
+  },
+  "src\\assets\\IMG-20260311-WA0001-removebg-preview.png": {
+    "hash": "0232f0fb3e3f8cb009bec9c7c0bfd0b973cfb74f",
+    "outputs": [
+      "src\\assets\\IMG-20260311-WA0001-removebg-preview.webp"
+    ],
+    "optionsHash": "ea8d848b302482c2b3597c52ad4d8769971aa40f",
+    "mtime": 1782080713292
   }
 }
