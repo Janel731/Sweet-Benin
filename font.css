@@ -1,0 +1,112 @@
+/* Milleniapolis Bold */
+@font-face {
+  font-family: "Milleniapolis";
+  src: url("./src/assets/fonts/Milleniapolis.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Milleniapolis Italic */
+@font-face {
+  font-family: "Milleniapolis";
+  src: url("./src/assets/fonts/Milleniapolis.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*DM Mono Bold */
+@font-face {
+  font-family: "DM Mono";
+  src: url("./src/assets/fonts/DMMono-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* DM Mono Medium */
+@font-face {
+  font-family: "DM Mono";
+  src: url("./src/assets/fonts/DMMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* DM Mono italic */
+@font-face {
+ font-family: "DM Mono";
+  src: url("./src/assets/fonts/DMMono-Italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Outfit Regular */
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url("./src/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+ font-family: "IBMPlexMono";
+  src: url("./src/assets/fonts/IBMPlexMono-Italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Cormorant Bold */
+.font-milleniapolis-bold {
+  font-family: "Milleniapolis", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Cormorant Bold Italic */
+.font-milleniapolis-italic {
+  font-family: "Milleniapolis", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Dancing Script Bold */
+.font-Dmmono-regular {
+  font-family: "DM Mono";
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.font-Dmmono-italic {
+  font-family: "DM mono";
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.font-ipm-bold {
+  font-family: "IBMPlexMono", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+/* Outfit Regular */
+.font-ipm-regular {
+  font-family: "IBMPlexMono", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-ipm-italic {
+  font-family: "IBMPlexMono", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
