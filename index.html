@@ -244,6 +244,20 @@
         color: white;
       }
 
+      @media (max-width: 768px) {
+        .masonry-item .overlay {
+          opacity: 1;
+          display: flex;
+          justify-content: flex-end;
+          padding: 20px;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75),
+            transparent 70%
+          );
+        }
+      }
+
       .masonry-item:hover .overlay {
         opacity: 1;
       }
@@ -502,6 +516,77 @@
           display: none;
         }
       }
+
+      @media (max-width: 768px) {
+        .carousel-container {
+          height: 320px;
+        }
+
+        .carousel-3d {
+          width: 150px;
+          height: 220px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .masonry-item {
+          width: calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .masonry-item {
+          width: 100%;
+        }
+
+        .short img,
+        .medium img,
+        .tall img {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          overflow-x: hidden;
+        }
+
+        .hero-proof {
+          gap: 24px;
+        }
+
+        .hero-proof > div {
+          min-width: 120px;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .hero-buttons a {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .review-card {
+          padding: 24px;
+        }
+
+        .faq-header {
+          font-size: 0.95rem;
+          padding: 18px;
+        }
+
+        .faq-body {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        .back-to-top {
+          right: 20px;
+          bottom: 90px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -516,9 +601,13 @@
         <div class="h-20 flex items-center justify-between">
           <a href="#" class="flex items-center gap-3">
             <div
-              class="w-12 h-12 rounded-full  flex items-center justify-center"
+              class="w-12 h-12 rounded-full flex items-center justify-center"
             >
-              <img src="./src/assets/logo.webp" class="w-full h-full object-cover" alt="logo">
+              <img
+                src="./src/assets/logo.webp"
+                class="w-full h-full object-cover"
+                alt="logo"
+              />
             </div>
             <span class="logo-text text-white text-2xl font-bold"
               >Sweet Bénin</span
@@ -553,9 +642,54 @@
           >
             <i data-lucide="message-circle"></i> Commander
           </a>
+
+          <!-- Bouton Menu Mobile -->
+          <button id="mobileMenuBtn" class="md:hidden text-white">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+          </button>
         </div>
       </div>
     </header>
+
+    <!-- DRAWER MOBILE -->
+    <div id="mobileMenu" class="fixed inset-0 z-[9999] hidden">
+      <!-- Overlay -->
+      <div id="mobileOverlay" class="absolute inset-0 bg-black/60"></div>
+
+      <!-- Drawer -->
+      <div
+        id="mobileDrawer"
+        class="absolute right-0 top-0 h-full w-[280px] bg-white shadow-2xl p-8 translate-x-full transition-transform duration-300"
+      >
+        <div class="flex justify-between items-center mb-10">
+          <h3 class="font-bold text-xl text-[var(--brown)]">Sweet Bénin</h3>
+
+          <button id="closeMenu">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-6">
+          <a href="#saveurs" class="mobile-link font-medium"> Saveurs </a>
+
+          <a href="#realisations" class="mobile-link font-medium">
+            Réalisations
+          </a>
+
+          <a href="#pricing" class="mobile-link font-medium"> Formules </a>
+
+          <a href="#contact" class="mobile-link font-medium"> Contact </a>
+
+          <a
+            href="https://wa.me/22999545576"
+            target="_blank"
+            class="gold-gradient text-white text-center py-4 rounded-full mt-4"
+          >
+            Commander
+          </a>
+        </nav>
+      </div>
+    </div>
 
     <!-- ============================================================
   HERO (cinématique avec typing effect)
@@ -565,16 +699,9 @@
       class="hero-bg min-h-screen flex items-center relative overflow-hidden"
     >
       <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div class="max-w-4xl">
-          <div
-            class="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-white mb-8"
-          >
-            <i data-lucide="sparkles"></i>
-            <span>11 saveurs artisanales uniques</span>
-          </div>
-
+        <div class="max-w-4xl pt-20 md:pt-0">
           <h1
-            class="hero-title title-font text-white text-5xl md:text-7xl font-black leading-tight"
+            class="hero-title title-font text-white text-4xl sm:text-5xl md:text-7xl"
           >
             Des coffrets de toffi premium
             <span class="block text-amber-400">
@@ -586,9 +713,7 @@
             </span>
           </h1>
 
-          <p
-            class="hero-text text-white/90 text-xl md:text-2xl mt-8 max-w-2xl leading-relaxed"
-          >
+          <p class="hero-text text-white/90 text-lg sm:text-xl md:text-2xl">
             Mariages, communions, anniversaires et événements d'entreprise.
             Offrez à vos invités une expérience gourmande élégante avec nos
             créations artisanales.
@@ -641,50 +766,58 @@
             La confiance de nos clients
           </h2>
         </div>
-        <div class="grid md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <div
-            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+            class="stat-card bg-white rounded-3xl p-5 md:p-8 text-center shadow-sm hover:shadow-md transition-shadow"
           >
             <h3
-              class="counter text-5xl font-extrabold text-amber-500"
+              class="counter text-4xl md:text-5xl font-extrabold text-amber-500"
               data-target="500"
             >
               0
             </h3>
-            <p class="mt-4 text-gray-600 font-medium">Coffrets livrés</p>
+            <p class="mt-3 text-sm md:text-base text-gray-600 font-medium">
+              Coffrets livrés
+            </p>
           </div>
           <div
-            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+            class="stat-card bg-white rounded-3xl p-5 md:p-8 text-center shadow-sm hover:shadow-md transition-shadow"
           >
             <h3
-              class="counter text-5xl font-extrabold text-amber-500"
-              data-target="120"
+              class="counter text-4xl md:text-5xl font-extrabold text-amber-500"
+              data-target="30"
             >
               0
             </h3>
-            <p class="mt-4 text-gray-600 font-medium">Événements accompagnés</p>
+            <p class="mt-3 text-sm md:text-base text-gray-600 font-medium">
+              Événements accompagnés
+            </p>
           </div>
           <div
-            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+            class="stat-card bg-white rounded-3xl p-5 md:p-8 text-center shadow-sm hover:shadow-md transition-shadow"
           >
             <h3
-              class="counter text-5xl font-extrabold text-amber-500"
+              class="counter text-4xl md:text-5xl font-extrabold text-amber-500"
               data-target="11"
             >
               0
             </h3>
-            <p class="mt-4 text-gray-600 font-medium">Saveurs uniques</p>
+            <p class="mt-3 text-sm md:text-base text-gray-600 font-medium">
+              Saveurs uniques
+            </p>
           </div>
           <div
-            class="stat-card bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+            class="stat-card bg-white rounded-3xl p-5 md:p-8 text-center shadow-sm hover:shadow-md transition-shadow"
           >
             <h3
-              class="counter text-5xl font-extrabold text-amber-500"
+              class="counter text-4xl md:text-5xl font-extrabold text-amber-500"
               data-target="99"
             >
               0
             </h3>
-            <p class="mt-4 text-gray-600 font-medium">Clients satisfaits</p>
+            <p class="mt-3 text-sm md:text-base text-gray-600 font-medium">
+              Clients satisfaits
+            </p>
           </div>
         </div>
       </div>
@@ -887,8 +1020,10 @@
             Des offres adaptées à vos besoins
           </h2>
         </div>
-        <div class="overflow-x-auto  flex justify-center items-center">
-          <div class="w-[360px] rounded-xl overflow-hidden bg-white shadow-2xl mb-2">
+        <div class="overflow-x-auto flex justify-center items-center">
+          <div
+            class="w-[360px] rounded-xl overflow-hidden bg-white shadow-2xl mb-2"
+          >
             <!-- HEADER -->
             <div class="relative h-52 overflow-hidden">
               <img
@@ -946,16 +1081,9 @@
               <button
                 class="mt-8 w-full rounded-full bg-[#9C0412] py-4 text-white font-semibold hover:scale-105 transition"
               >
-
-               <a
-            href="https://wa.me/22961123456"
-            target="_blank"
-              
-          >
-             Commander
-          </a>
-               
-                
+                <a href="https://wa.me/22961123456" target="_blank">
+                  Commander
+                </a>
               </button>
             </div>
           </div>
@@ -1157,7 +1285,9 @@
   ============================================================ -->
     <section id="contact" class="bg-white">
       <div class="max-w-7xl mx-auto px-6 py-24">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
+        >
           <div>
             <span class="text-amber-600 font-semibold uppercase tracking-widest"
               >Contactez-nous</span
@@ -1216,7 +1346,7 @@
               Demander un devis rapide
             </h3>
             <form class="space-y-4">
-              <div class="grid grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
                   placeholder="Prénom"
@@ -1275,11 +1405,15 @@
           class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center"
         >
           <div
-            class="w-16 h-16 rounded-full  flex items-center justify-center mb-6"
+            class="w-16 h-16 rounded-full flex items-center justify-center mb-6"
           >
-              <img src="./src/assets/logo.webp" class="w-full h-full object-cover" alt="logo">
+            <img
+              src="./src/assets/logo.webp"
+              class="w-full h-full object-cover"
+              alt="logo"
+            />
           </div>
-          <h2 class="title-font text-4xl text-white mb-8">
+          <h2 class="title-font text-3xl md:text-4xl text-white mb-8">
             Faites de votre événement un moment inoubliable
           </h2>
           <a
@@ -1344,7 +1478,7 @@
       });
 
       // -------- HERO ANIMATIONS --------
-      gsap.from(".hero-badge", { y: 30, opacity: 0, duration: 1 });
+
       gsap.from(".hero-title", {
         y: 50,
         opacity: 0,
@@ -1463,15 +1597,6 @@
         ease: "power3.out",
       });
 
-      // -------- PRICING TABLE --------
-      gsap.from(".pricing-table", {
-        scrollTrigger: { trigger: "#pricing", start: "top 75%" },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "back.out(1.2)",
-      });
-
       // -------- TESTIMONIAL CAROUSEL --------
       const track = document.getElementById("testimonial-track");
       const dots = document.querySelectorAll(".testimonial-dot");
@@ -1579,8 +1704,6 @@
       // Refresh ScrollTrigger on resize
       window.addEventListener("resize", () => ScrollTrigger.refresh());
 
-      console.log("Sweet Bénin – Version améliorée avec animations premium !");
-
       const flavors = [
         {
           name: "Menthe",
@@ -1664,6 +1787,10 @@
     </div>
   `;
         carousel.appendChild(card);
+
+        const translateZ = window.innerWidth < 768 ? 260 : 500;
+
+        card.style.transform = `rotateY(${i * angle}deg) translateZ(${translateZ}px)`;
       });
 
       function updateCarousel() {
@@ -1698,6 +1825,36 @@
           gutter: 20,
           percentPosition: true,
         });
+      });
+
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const closeMenu = document.getElementById("closeMenu");
+      const mobileOverlay = document.getElementById("mobileOverlay");
+
+      function openMenu() {
+        mobileMenu.classList.remove("hidden");
+
+        setTimeout(() => {
+          mobileDrawer.classList.remove("translate-x-full");
+        }, 10);
+      }
+
+      function closeDrawer() {
+        mobileDrawer.classList.add("translate-x-full");
+
+        setTimeout(() => {
+          mobileMenu.classList.add("hidden");
+        }, 300);
+      }
+
+      mobileMenuBtn.addEventListener("click", openMenu);
+      closeMenu.addEventListener("click", closeDrawer);
+      mobileOverlay.addEventListener("click", closeDrawer);
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", closeDrawer);
       });
     </script>
   </body>
