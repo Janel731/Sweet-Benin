@@ -8,13 +8,7 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+   
 
     <!-- Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -176,26 +170,10 @@
       .step-card p {
         margin-top: 10px;
         color: #6b7280;
+        font-weight: 600;
       }
 
-      /* Galerie Masonry */
-      /* .masonry-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 20px;
-        gap: 20px;
-      } */
-
-      /* .masonry-item {
-      
-        
-        position: relative;
-        transition:
-          transform 0.4s ease,
-          box-shadow 0.4s ease;
-        
-        
-      } */
+    
 
       .masonry-grid {
         width: 100%;
@@ -263,8 +241,7 @@
       }
 
       .masonry-item .overlay h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.2rem;
+        font-size: 3em;
         font-weight: 700;
       }
 
@@ -611,11 +588,11 @@
                 alt="logo"
               />
             </div>
-            <span class="logo-text text-white text-2xl font-ipm-bold"
+            <span class="logo-text text-white text-2xl font-milleniapolis-bold"
               >Sweet Bénin</span
             >
           </a>
-          <nav class="hidden md:flex items-center gap-8">
+          <nav class="hidden md:flex items-center gap-8 font-Dmmono-regular">
             <a
               href="#saveurs"
               class="nav-link text-white font-medium hover:text-amber-400 transition"
@@ -640,7 +617,7 @@
           <a
             href="https://wa.me/22999545576"
             target="_blank"
-            class="hidden sm:flex items-center gap-2 gold-gradient text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
+            class="hidden sm:flex items-center gap-2 gold-gradient text-white px-6 py-3 rounded-full font-Dmmono-regular shadow-lg hover:shadow-xl transition-shadow"
           >
             <i data-lucide="message-circle"></i> Commander
           </a>
@@ -664,14 +641,14 @@
         class="absolute right-0 top-0 h-full w-[280px] bg-white shadow-2xl p-8 translate-x-full transition-transform duration-300"
       >
         <div class="flex justify-between items-center mb-10">
-          <h3 class="font-bold text-xl text-[var(--brown)]">Sweet Bénin</h3>
+          <h3 class="font-bold text-xl text-[var(--brown)] font-milleniapolis-bold">Sweet Bénin</h3>
 
           <button id="closeMenu">
             <i data-lucide="x"></i>
           </button>
         </div>
 
-        <nav class="flex flex-col gap-6">
+        <nav class="flex flex-col gap-6 font-Dmmono-regular">
           <a href="#saveurs" class="mobile-link font-medium"> Saveurs </a>
 
           <a href="#realisations" class="mobile-link font-medium">
@@ -703,7 +680,7 @@
       <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
         <div class="max-w-4xl pt-20 md:pt-0">
           <h1
-            class="hero-title title-font text-white text-4xl sm:text-5xl md:text-7xl"
+            class="hero-title title-font text-white text-4xl sm:text-5xl md:text-7xl font-milleniapolis-bold"
           >
             Des coffrets de toffi premium
             <span class="block text-amber-400">
@@ -715,13 +692,13 @@
             </span>
           </h1>
 
-          <p class="hero-text text-white/90 text-lg sm:text-xl md:text-2xl">
+          <p class="hero-text text-white/90 text-lg sm:text-xl md:text-2xl font-ipm-regular">
             Mariages, communions, anniversaires et événements d'entreprise.
             Offrez à vos invités une expérience gourmande élégante avec nos
             créations artisanales.
           </p>
 
-          <div class="hero-buttons flex flex-wrap gap-4 mt-10">
+          <div class="hero-buttons flex flex-wrap gap-4 mt-10 font-Dmmono-regular">
             <a
               href="https://wa.me/22999545576"
               target="_blank"
@@ -731,13 +708,13 @@
             </a>
             <a
               href="#realisations"
-              class="glass text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all"
+              class="glass text-white px-8 py-4 rounded-full  hover:bg-white/20 transition-all"
             >
               Voir nos créations
             </a>
           </div>
 
-          <div class="hero-proof flex flex-wrap gap-10 mt-16">
+          <div class="hero-proof flex flex-wrap gap-10 mt-16  font-ipm-regular">
             <div>
               <h3 class="text-white text-4xl font-bold">500+</h3>
               <p class="text-white/80">Coffrets livrés</p>
@@ -761,14 +738,14 @@
     <section id="stats" class="py-24 bg-[var(--cream)]">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-          <span class="text-amber-600 font-semibold uppercase tracking-widest"
-            >Sweet Bénin en chiffres</span
+          <span class="text-amber-600 font-ipm-bold uppercase tracking-widest"
+            >SweetBénin en chiffres</span
           >
-          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4 font-Dmmono-regular">
             La confiance de nos clients
           </h2>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 font-ipm-bold">
           <div
             class="stat-card bg-white rounded-3xl p-5 md:p-8 text-center shadow-sm hover:shadow-md transition-shadow"
           >
@@ -831,15 +808,15 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <span
-            class="text-amber-600 font-semibold uppercase tracking-widest text-sm"
+            class="text-amber-600 font-ipm-bold uppercase tracking-widest text-sm"
             >Expérience Sensorielle</span
           >
-          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+          <h2 class="title-font text-5xl text-[var(--brown)] mt-4 font-Dmmono-regular">
             Nos 11 Saveurs de Toffi
           </h2>
         </div>
 
-        <div class="carousel-container">
+        <div class="carousel-container font-Dmmono-italic">
           <div class="carousel-3d" id="flavorCarousel"></div>
         </div>
 
@@ -862,7 +839,7 @@
           <a
             href="https://wa.me/22961123456"
             target="_blank"
-            class="gold-gradient inline-flex items-center gap-3 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all"
+            class="gold-gradient inline-flex items-center gap-3 text-white px-10 py-4 rounded-full font-Dmmono-regular text-lg shadow-xl hover:shadow-2xl transition-all"
           >
             <i data-lucide="message-circle"></i> Commander un assortiment
           </a>
@@ -876,43 +853,43 @@
     <section id="process" class="py-24 bg-[var(--cream)] overflow-hidden">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-20">
-          <span class="text-amber-600 font-semibold uppercase tracking-widest"
-            >Comment ça marche</span
+          <span class="text-amber-600 font-ipm-bold uppercase tracking-widest"
+            >Comment ça marche ?</span
           >
-          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+          <h2 class="font-Dmmono-regular text-5xl text-[var(--brown)] mt-4">
             Commandez en quelques étapes
           </h2>
-          <p class="text-gray-600 text-lg mt-6">
+          <p class="text-gray-600 text-lg mt-6 font-Dmmono-regular">
             Nous vous accompagnons de la sélection des saveurs jusqu'à la
             livraison.
           </p>
         </div>
         <div class="grid md:grid-cols-4 gap-8 relative">
           <div class="step-card">
-            <div class="step-number">1</div>
+            <div class="step-number font-Dmmono-italic">1</div>
             <div class="step-icon"><i data-lucide="candy"></i></div>
-            <h3>Choisissez vos saveurs</h3>
-            <p>Sélectionnez vos saveurs préférées ou créez un assortiment.</p>
+            <h3 class="font-Dmmono-italic">Choisissez vos saveurs</h3>
+            <p class="font-ipm-regular" >Sélectionnez vos saveurs préférées ou créez un assortiment.</p>
           </div>
           <div class="step-card">
-            <div class="step-number">2</div>
+            <div class="step-number font-Dmmono-italic">2</div>
             <div class="step-icon"><i data-lucide="palette"></i></div>
-            <h3>Personnalisez</h3>
-            <p>
+            <h3 class="font-Dmmono-italic">Personnalisez</h3>
+            <p class="font-ipm-regular">
               Choisissez le style de votre coffret, les couleurs et le message.
             </p>
           </div>
           <div class="step-card">
-            <div class="step-number">3</div>
+            <div class="step-number font-Dmmono-italic">3</div>
             <div class="step-icon"><i data-lucide="package"></i></div>
-            <h3>Préparation</h3>
-            <p>Notre équipe prépare votre commande avec le plus grand soin.</p>
+            <h3 class="font-Dmmono-italic">Préparation</h3>
+            <p class="font-ipm-regular">Notre équipe prépare votre commande avec le plus grand soin.</p>
           </div>
           <div class="step-card">
-            <div class="step-number">4</div>
+            <div class="step-number font-Dmmono-italic">4</div>
             <div class="step-icon"><i data-lucide="truck"></i></div>
-            <h3>Livraison</h3>
-            <p>Recevez votre commande où que vous soyez.</p>
+            <h3 class="font-Dmmono-italic">Livraison</h3>
+            <p class="font-ipm-regular">Recevez votre commande où que vous soyez.</p>
           </div>
         </div>
       </div>
@@ -924,13 +901,13 @@
     <section id="realisations" class="py-24 bg-white overflow-hidden">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-amber-600 font-semibold uppercase tracking-widest"
+          <span class="text-amber-600 font-ipm-bold uppercase tracking-widest"
             >Nos Créations</span
           >
-          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+          <h2 class="font-Dmmono-regular text-5xl text-[var(--brown)] mt-4">
             L'élégance à chaque événement
           </h2>
-          <p class="text-gray-600 text-lg mt-6">
+          <p class="text-gray-600 text-lg mt-6 font-Dmmono-regular">
             Découvrez comment nos coffrets de toffi subliment les moments les
             plus précieux.
           </p>
@@ -939,8 +916,8 @@
           <div class="masonry-item short">
             <img src="./src/assets/noel.webp" alt="Noël" loading="lazy" />
             <div class="overlay">
-              <h3>Noël</h3>
-              <p>Coffrets Premium - 200 invités</p>
+              <h3 class="font-milleniapolis-bold">Noël</h3>
+              <p class="font-ipm-bold">Coffrets Premium - 200 invités</p>
             </div>
           </div>
           <div class="masonry-item medium">
@@ -950,8 +927,8 @@
               loading="lazy"
             />
             <div class="overlay">
-              <h3>Communion</h3>
-              <p>
+              <h3 class="font-milleniapolis-bold">Communion</h3>
+              <p class="font-ipm-bold">
                 Une journée spéciale marquée par l'émotion, la foi et la
                 célébration en famille.
               </p>
@@ -960,8 +937,8 @@
           <div class="masonry-item tall">
             <img src="./src/assets/dot.webp" alt="Baptême" loading="lazy" />
             <div class="overlay">
-              <h3>Dot</h3>
-              <p>
+              <h3 class="font-milleniapolis-bold">Dot</h3>
+              <p class="font-ipm-bold">
                 Sublimez cette tradition précieuse avec une touche d'élégance et
                 de raffinement.
               </p>
@@ -974,8 +951,8 @@
               loading="lazy"
             />
             <div class="overlay">
-              <h3>Anniversaire</h3>
-              <p>
+              <h3 class="font-milleniapolis-bold">Anniversaire</h3>
+              <p class="font-ipm-bold">
                 Rendez chaque anniversaire unique grâce à une surprise pensée
                 avec soin.
               </p>
@@ -984,8 +961,8 @@
           <div class="masonry-item medium">
             <img src="./src/assets/paque.webp" alt="Pâque" loading="lazy" />
             <div class="overlay">
-              <h3>Pâques</h3>
-              <p>
+              <h3 class="font-milleniapolis-bold">Pâques</h3>
+              <p class="font-ipm-bold">
                 Partagez la joie de Pâques avec des attentions qui font plaisir
                 aux petits comme aux grands.
               </p>
@@ -998,8 +975,8 @@
               loading="lazy"
             />
             <div class="overlay">
-              <h3>Nouveau-né</h3>
-              <p>
+              <h3 class="font-milleniapolis-bold">Nouveau-né</h3>
+              <p class="font-ipm-bold">
                 Célébrez l'arrivée d'un nouveau-né avec une attention pleine de
                 douceur et d'amour.
               </p>
@@ -1010,15 +987,15 @@
     </section>
 
     <!-- ============================================================
-  FORMULES (Tableau comparatif au lieu de cartes)
+                             FORMULES 
   ============================================================ -->
     <section id="pricing" class="py-24 bg-[var(--cream)] overflow-hidden">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-amber-600 font-semibold uppercase tracking-widest"
-            >Nos Formules</span
+          <span class="text-amber-600 font-ipm-bold uppercase tracking-widest"
+            >Formules</span
           >
-          <h2 class="title-font text-5xl text-[var(--brown)] mt-4">
+          <h2 class="font-Dmmono-regular text-5xl text-[var(--brown)] mt-4">
             Des offres adaptées à vos besoins
           </h2>
         </div>
@@ -1037,10 +1014,10 @@
               <div class="absolute inset-0 bg-[#9C0412]/75"></div>
 
               <div
-                class="relative z-20 flex h-full flex-col items-center justify-center text-white"
+                class="relative z-20 flex h-full flex-col items-center justify-center text-white font-milleniapolis-bold"
               >
                 <h2 class="text-6xl font-bold">SWEET</h2>
-                <p class="text-lg">BENIN</p>
+                <p class="text-4xl">BENIN</p>
               </div>
 
               <!-- VAGUE IDENTIQUE -->
@@ -1069,11 +1046,11 @@
 
             <!-- BODY -->
             <div class="pt-16 pb-8 px-8 text-center">
-              <h3 class="text-3xl font-bold text-[#9C0412]">
+              <h3 class="text-3xl font-bold text-[#9C0412] font-Dmmono-regular">
                 Coffret Personnalisés
               </h3>
 
-              <div class="mt-6 space-y-3 text-gray-500">
+              <div class="mt-6 space-y-3 text-gray-500 font-Dmmono-italic">
                 <p>Personnalisation complète</p>
                 <p>Packaging premium</p>
                 <p>Message personnalisé</p>
@@ -1081,7 +1058,7 @@
               </div>
 
               <button
-                class="mt-8 w-full rounded-full bg-[#9C0412] py-4 text-white font-semibold hover:scale-105 transition"
+                class="mt-8 w-full rounded-full bg-[#9C0412] py-4 text-white font-Dmmono-regular hover:scale-105 transition"
               >
                 <a href="https://wa.me/22961123456" target="_blank">
                   Commander
@@ -1099,7 +1076,7 @@
     <section class="py-24 bg-white overflow-hidden">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="title-font text-5xl text-[var(--brown)]">Ils ont adoré</h2>
+          <h2 class="font-Dmmono-italic text-5xl text-[var(--brown)]">Ils ont adoré</h2>
         </div>
         <div class="relative overflow-hidden">
           <div
@@ -1117,7 +1094,7 @@
                   ><i data-lucide="star" class="fill-current w-5 h-5"></i
                   ><i data-lucide="star" class="fill-current w-5 h-5"></i>
                 </div>
-                <p class="text-gray-600 italic mb-6">
+                <p class="text-gray-600 italic mb-6 font-ipm-italic">
                   "Les coffrets pour notre mariage étaient magnifiques. Les
                   invités ont été surpris par la finesse des toffis au gingembre
                   et coco. Un service irréprochable !"
@@ -1129,7 +1106,7 @@
                       alt="Avatar"
                     />
                   </div>
-                  <div>
+                  <div class="font-Dmmono-regular">
                     <h4 class="font-bold text-[var(--brown)]">Marie D.</h4>
                     <span class="text-sm text-gray-500">Mariée</span>
                   </div>
@@ -1147,7 +1124,7 @@
                   ><i data-lucide="star" class="fill-current w-5 h-5"></i
                   ><i data-lucide="star" class="fill-current w-5 h-5"></i>
                 </div>
-                <p class="text-gray-600 italic mb-6">
+                <p class="text-gray-600 italic mb-6 font-ipm-italic">
                   "Nous avons commandé 500 coffrets pour notre gala de fin
                   d'année. L'équipe a su personnaliser chaque boîte avec notre
                   logo. Excellent retour de nos collaborateurs."
@@ -1159,7 +1136,7 @@
                       alt="Avatar"
                     />
                   </div>
-                  <div>
+                  <div class="font-Dmmono-regular">
                     <h4 class="font-bold text-[var(--brown)]">Paul K.</h4>
                     <span class="text-sm text-gray-500">Directeur RH</span>
                   </div>
@@ -1177,7 +1154,7 @@
                   ><i data-lucide="star" class="fill-current w-5 h-5"></i
                   ><i data-lucide="star" class="fill-current w-5 h-5"></i>
                 </div>
-                <p class="text-gray-600 italic mb-6">
+                <p class="text-gray-600 italic mb-6 font-ipm-italic">
                   "Le toffi à la noix de cajou est une véritable tuerie !
                   Présentation soignée, livraison dans les temps à Cotonou. Je
                   recommanderai sans hésiter pour l'anniversaire de ma fille."
@@ -1188,8 +1165,8 @@
                       src="https://ui-avatars.com/api/?name=Amina+T.&background=f2c66d&color=fff"
                       alt="Avatar"
                     />
-                  </div>
-                  <div>
+                  </div >
+                  <div class="font-Dmmono-regular">
                     <h4 class="font-bold text-[var(--brown)]">Amina T.</h4>
                     <span class="text-sm text-gray-500">Mère de famille</span>
                   </div>
@@ -1222,21 +1199,21 @@
     <section id="faq" class="py-24 bg-[var(--cream)]">
       <div class="max-w-4xl mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="title-font text-5xl text-[var(--brown)]">
+          <h2 class="font-Dmmono-italic text-5xl text-[var(--brown)]">
             Questions Fréquentes
           </h2>
         </div>
         <div class="space-y-4">
           <div class="faq-item">
             <div class="faq-header">
-              <span>Combien de temps à l'avance dois-je commander ?</span>
+              <span class="font-ipm-bold" >Combien de temps à l'avance dois-je commander ?</span>
               <i
                 data-lucide="chevron-down"
                 class="text-[var(--gold)] transition-transform duration-300"
               ></i>
             </div>
             <div class="faq-body">
-              <p>
+              <p class="font-Dmmono-italic">
                 Pour les mariages et grands événements (>100 coffrets), nous
                 recommandons de passer commande au moins 3 semaines à l'avance.
                 Pour les petites commandes, 1 semaine suffit généralement.
@@ -1245,14 +1222,14 @@
           </div>
           <div class="faq-item">
             <div class="faq-header">
-              <span>Livrez-vous partout au Bénin ?</span>
+              <span class="font-ipm-bold">Livrez-vous partout au Bénin ?</span>
               <i
                 data-lucide="chevron-down"
                 class="text-[var(--gold)] transition-transform duration-300"
               ></i>
             </div>
             <div class="faq-body">
-              <p>
+              <p class="font-Dmmono-italic">
                 Oui ! Nous sommes basés à Cotonou mais nous organisons des
                 expéditions sécurisées vers toutes les grandes villes du Bénin
                 via nos partenaires logistiques.
@@ -1262,7 +1239,7 @@
           <div class="faq-item">
             <div class="faq-header">
               <span
-                >Est-il possible de goûter avant de commander une grande
+                 class="font-ipm-bold">Est-il possible de goûter avant de commander une grande
                 quantité ?</span
               >
               <i
@@ -1271,7 +1248,7 @@
               ></i>
             </div>
             <div class="faq-body">
-              <p>
+              <p class="font-Dmmono-italic"> 
                 Absolument. Nous proposons un "Coffret Dégustation" contenant
                 nos 11 saveurs à un tarif préférentiel pour vous aider à faire
                 votre choix.
@@ -1291,18 +1268,18 @@
           class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
         >
           <div>
-            <span class="text-amber-600 font-semibold uppercase tracking-widest"
+            <span class="text-amber-600 font-milleniapolis-bold text-4xl uppercase tracking-widest"
               >Contactez-nous</span
             >
-            <h2 class="title-font text-5xl text-[var(--brown)] mt-4 mb-6">
+            <h2 class="font-ipm-bold text-5xl text-[var(--brown)] mt-4 mb-6 ">
               Prêt à sublimer votre événement ?
             </h2>
-            <p class="text-gray-600 mb-10">
+            <p class="text-gray-600 mb-10 font-Dmmono-regular">
               Notre équipe est à votre disposition pour vous conseiller sur les
               meilleures associations de saveurs et le packaging idéal pour vos
               invités.
             </p>
-            <div class="space-y-6">
+            <div class="space-y-6 font-Dmmono-regular ">
               <div class="flex items-center gap-4">
                 <div
                   class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-[var(--gold)]"
@@ -1344,10 +1321,10 @@
           <div
             class="bg-[var(--cream)] p-10 rounded-3xl shadow-sm border border-amber-100"
           >
-            <h3 class="text-2xl font-bold text-[var(--brown)] mb-6">
+            <h3 class="text-2xl font-ipm-bold text-[var(--brown)] mb-6">
               Demander un devis rapide
             </h3>
-            <form class="space-y-4">
+            <form class="space-y-4 font-Dmmono-regular">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -1415,21 +1392,21 @@
               alt="logo"
             />
           </div>
-          <h2 class="title-font text-3xl md:text-4xl text-white mb-8">
+          <h2 class="font-ipm-italic text-3xl md:text-4xl text-white mb-8">
             Faites de votre événement un moment inoubliable
           </h2>
           <a
             href="https://wa.me/22999545576"
             target="_blank"
-            class="gold-gradient text-white px-10 py-4 rounded-full font-bold shadow-xl flex items-center gap-3 hover:scale-105 transition-transform"
+            class="gold-gradient text-white px-10 py-4 rounded-full font-Dmmono-italic shadow-xl flex items-center gap-3 hover:scale-105 transition-transform"
           >
             <i data-lucide="message-circle" class="w-6 h-6"></i> Discutons sur
             WhatsApp
           </a>
           <div
-            class="w-full border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm"
+            class="w-full border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm font-ipm-bold"
           >
-            <p>&copy; 2026 Sweet Bénin. Tous droits réservés.</p>
+            <p>&copy; 2026 <span class="font-milleniapolis-bold"> Sweet Bénin.</span> Tous droits réservés.</p>
             <div class="flex gap-4 mt-4 md:mt-0">
               <a href="#" class="hover:text-[var(--gold)] transition-colors"
                 >Mentions légales</a
@@ -1460,7 +1437,7 @@
       class="whatsapp-sticky"
     >
       <i data-lucide="message-circle" class="w-5 h-5"></i>
-      <span>Commander sur WhatsApp</span>
+      <span class="font-Dmmono-regular">Commander sur WhatsApp</span>
     </a>
 
     <!-- ============================================================
@@ -1783,8 +1760,8 @@
 
         card.innerHTML = `
     <img src="${f.img}" class="card-image" alt="${f.name}">
-    <div class="card-content">
-      <h3 class="title-font text-xl font-bold text-[#5b3427]">${f.name}</h3>
+    <div class="card-content font-Dmmono-italic">
+      <h3 class="text-xl font-bold text-[#5b3427]">${f.name}</h3>
       <p class="text-sm text-gray-500">${f.desc}</p>
     </div>
   `;
