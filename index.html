@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-  name="description"
-  content="Sweet Bénin crée des coffrets cadeaux personnalisés pour anniversaires, mariages, baptêmes, naissances, fêtes d'entreprise, Noël, Pâques et événements spéciaux. Livraison partout au Bénin."
-/>
+      name="description"
+      content="Sweet Bénin crée des coffrets cadeaux personnalisés pour anniversaires, mariages, baptêmes, naissances, fêtes d'entreprise, Noël, Pâques et événements spéciaux. Livraison partout au Bénin."
+    />
 
-<meta
-  name="keywords"
-  content="
+    <meta
+      name="keywords"
+      content="
   sweet bénin,
   coffret cadeau bénin,
   coffret personnalisé bénin,
@@ -36,7 +36,75 @@
   coffret événementiel bénin,
   coffret luxe bénin
 "
-/>
+    />
+    <meta name="author" content="Sweet Bénin" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="language" content="French" />
+    <meta name="geo.region" content="BJ" />
+    <meta name="geo.country" content="Benin" />
+
+    <link rel="canonical" href="https://sweet-benin.vercel.app/" />
+
+    <!-- ========================================= -->
+    <!-- OPEN GRAPH FACEBOOK -->
+    <!-- ========================================= -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sweet Bénin" />
+    <meta
+      property="og:title"
+      content="Sweet Bénin | Coffrets Cadeaux Personnalisés"
+    />
+
+    <meta
+      property="og:description"
+      content="Des coffrets cadeaux personnalisés pour anniversaires, mariages, entreprises, baptêmes, Noël et toutes les occasions spéciales."
+    />
+
+    <meta property="og:url" content="https://sweet-benin.vercel.app/" />
+
+    <meta
+      property="og:image"
+      content="https://sweet-benin.vercel.app/src/assets/logo.webp"
+    />
+
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- ========================================= -->
+    <!-- THEME -->
+    <!-- ========================================= -->
+
+    <meta name="theme-color" content="#D4A24C" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- ========================================= -->
+    <!-- SCHEMA.ORG -->
+    <!-- ========================================= -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Sweet Bénin",
+        "description": "Création de coffrets cadeaux personnalisés pour particuliers, entreprises et événements au Bénin.",
+        "url": "https://sweet-benin.vercel.app/",
+        "telephone": "+22999545576",
+        "email": "contact@sweetbenin.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BJ",
+          "addressLocality": "Cotonou"
+        },
+        "areaServed": "Benin",
+        "priceRange": "FCFA",
+        "image": "https://sweet-benin.vercel.app/src/assets/logo.webp",
+        "sameAs": [
+          "https://www.facebook.com/sweetbenin",
+          "https://www.instagram.com/sweetbenin"
+        ]
+      }
+    </script>
 
     <title>Sweet Bénin | Coffrets de Toffi Premium</title>
 
@@ -1726,7 +1794,6 @@
         }
       });
 
-    
       // Refresh ScrollTrigger on resize
       window.addEventListener("resize", () => ScrollTrigger.refresh());
 
@@ -1910,7 +1977,7 @@ ${message}
 
         const url =
           `https://wa.me/${numero}?text=` + encodeURIComponent(whatsappMessage);
-          form.reset();
+        form.reset();
 
         window.open(url, "_blank");
       });
